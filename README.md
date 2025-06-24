@@ -1,10 +1,7 @@
-> [!IMPORTANT]
-> `main` is the development branch. Application developers should use the [latest release](https://github.com/risc0/risc0-solana/releases) instead.
-
 # RISC Zero Solana
 
 > [!WARNING]
-> This is unaudited and not yet recommended for production use. 
+> This is unaudited and not yet recommended for production use.
 
 [RISC Zero] is a zero-knowledge verifiable general computing platform, with [Solana] integration.
 This repository contains our Solana verifier infrastructure and supporting code.
@@ -25,7 +22,6 @@ We provide several supporting libraries to help developers integrate with the ve
 
 - [Groth16 Verifier][verifier]: Groth16 proof verification using Solana `alt-bn254` system calls
 - [Ownable Library][ownable]: Secure two-step ownership transfer for Solana programs
-- [Example Code][examples]: Integration code demonstrating verifier usage
 
 ## Getting Started
 
@@ -36,14 +32,11 @@ Full documentation for using RISC Zero, including guides for [writing zkVM progr
 - [Groth16 Verifier Program][verifier]
 - [Verifier Router][router]
 - [Ownable Library][ownable]
-- [Example Code][examples]
 
 [RISC Zero]: https://github.com/risc0/risc0
 [Solana]: https://solana.com
-[examples]: ./solana-examples
 [router]: ./solana-verifier
 [ownable]: ./solana-ownable
 [verifier]: ./solana-verifier/programs/groth_16_verifier
 [risc0-quickstart]: https://dev.risczero.com/api/zkvm/quickstart
-[bonsai-quickstart]: https://dev.risczero.com/bonsai
 [Developer Documentation]: https://dev.risczero.com
