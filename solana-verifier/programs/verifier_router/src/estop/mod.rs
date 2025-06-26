@@ -19,11 +19,11 @@ use anchor_lang::solana_program::program::invoke_signed;
 use groth_16_verifier::cpi::accounts::VerifyProof;
 use groth_16_verifier::Proof;
 pub mod events;
-use crate::state::{VerifierEntry, VerifierRouter};
-use crate::RouterError;
+use anchor_lang::solana_program::bpf_loader_upgradeable;
 use events::EmergencyStopEvent;
 
-use anchor_lang::solana_program::bpf_loader_upgradeable;
+use crate::state::{VerifierEntry, VerifierRouter};
+use crate::RouterError;
 
 /// Account validation for emergency stop operations
 ///

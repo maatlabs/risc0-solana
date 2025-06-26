@@ -13,12 +13,13 @@
 // limitations under the License.
 //
 // SPDX-License-Identifier: Apache-2.0
+#![allow(unexpected_cfgs)]
 
 use anchor_lang::prelude::*;
 use anchor_lang::system_program;
 use groth_16_verifier::Proof;
 
-declare_id!("DAkJzHMBpV7k4EMEWXfd6vva9PRM4Fcr413Xqz7FtgXY");
+declare_id!("3pcwBuXpRnQrQRmMA1S3HuKvR9FVcXrz1bGugvArGHLv");
 
 #[error_code]
 pub enum VerifierError {

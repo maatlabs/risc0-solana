@@ -14,12 +14,13 @@
 //
 // SPDX-License-Identifier: Apache-2.0
 
-use super::vk::{G1_LEN, G2_LEN};
-use super::{negate_g1, Proof};
 use anyhow::{anyhow, Error, Result};
 use num_bigint::BigUint;
 use risc0_zkvm::{Groth16Receipt, ReceiptClaim};
 use serde::{Deserialize, Deserializer, Serialize};
+
+use super::vk::{G1_LEN, G2_LEN};
+use super::{negate_g1, Proof};
 
 #[derive(Deserialize, Serialize, Debug, PartialEq)]
 struct ProofJson {

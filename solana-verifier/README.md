@@ -5,19 +5,22 @@ A flexible and secure system for managing zero-knowledge proof verifications on 
 ## Overview
 
 The Verifier Router system enables:
+
 - Dynamic registration and routing of ZK proof verifiers
 - Emergency stop mechanisms with both centralized and decentralized triggers
 - Flexible ownership controls with two-step transfers
 
 Comprehensive script support for program management:
+
 - Supports both local key signers and Fireblocks HSM
 - Supports adding additional verifiers beyond the currently supported Groth_16 program
-- Ownership management and transfer 
-- Emergency Stop by owner 
+- Ownership management and transfer
+- Emergency Stop by owner
 
 ## Getting Started
 
 ### Prerequisites
+
 - Rust and Cargo
 - Solana Tool Suite
 - Node.js and Yarn
@@ -26,28 +29,32 @@ Comprehensive script support for program management:
 ### Installation
 
 1. Clone the repository:
+
 ```bash
 git clone <repository-url>
 cd verifier-router
 ```
 
 2. Install dependencies:
+
 ```bash
 yarn install
 ```
 
 3. Configure environment:
+
 ```bash
 cp example.env .env
 # Edit .env with your configuration
 ```
 
 ### Deployment
+
 Note: Deployment accounts need at minimum a 6 SOL balance by default and
 any non-deployment actions require an account with a 1 SOL minimum balance.
 
-
 1. Deploy the router and initial verifier:
+
 ```bash
 anchor keys sync
 anchor build
@@ -56,6 +63,7 @@ yarn run deploy
 ```
 
 2. (Optional) Add additional verifiers programs:
+
 ```bash
 yarn run add
 ```
@@ -132,17 +140,20 @@ pub struct IncrementNonce<'info> {
 ### Router Management
 
 1. Transfer Ownership:
+
 ```bash
 NEW_OWNER=<pubkey> yarn run transfer
 yarn run accept  # Run on new owner's machine
 ```
 
 2. Add Verifier:
+
 ```bash
 VERIFIER_ADDRESS=<address> yarn run add
 ```
 
 3. Emergency Stop:
+
 ```bash
 yarn run estop  # Follow prompts
 ```
@@ -150,6 +161,7 @@ yarn run estop  # Follow prompts
 ## Development Tools
 
 ### Scripts
+
 All scripts have values set in the environment, see `example.env` for a full
 list of options.
 
@@ -164,6 +176,7 @@ list of options.
 ### Environment Variables
 
 See `example.env` for full configuration options including:
+
 - Network endpoints
 - Account addresses
 - Deployment settings
@@ -172,11 +185,13 @@ See `example.env` for full configuration options including:
 ## Testing
 
 Open a terminal and run a local validator:
+
 ```bash
 solana-test-validator -r
 ```
 
 Then in another terminal run:
+
 ```bash
 anchor test --skip-local-validator
 ```

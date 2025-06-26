@@ -13,6 +13,7 @@
 // limitations under the License.
 //
 // SPDX-License-Identifier: Apache-2.0
+#![allow(unexpected_cfgs)]
 
 use anchor_lang::prelude::*;
 use groth_16_verifier::Proof;
@@ -20,13 +21,12 @@ use groth_16_verifier::Proof;
 pub mod estop;
 pub mod router;
 pub mod state;
-pub use ownable::OwnableError;
-
 use estop::*;
+pub use ownable::OwnableError;
 use router::*;
 use state::*;
 
-declare_id!("CkiFTJ5vbyyVfMfstEV8Zo4ALPkGuVQURUFky5mBNhcL");
+declare_id!("6L2zH1CpQGNzMc8uNX1QcK3iiNxKB1FpDgaLm1yR8nU7");
 
 /// Verifier Router Program for Anchor
 ///

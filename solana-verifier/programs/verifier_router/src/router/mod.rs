@@ -15,15 +15,15 @@
 // SPDX-License-Identifier: Apache-2.0
 
 pub mod error;
-pub use error::RouterError;
-pub use groth_16_verifier::{Proof, PublicInputs, VerificationKey};
-
-use crate::state::{VerifierEntry, VerifierRouter};
 use anchor_lang::prelude::*;
 use anchor_lang::solana_program::bpf_loader_upgradeable;
+pub use error::RouterError;
 use groth_16_verifier::cpi::accounts::VerifyProof;
 pub use groth_16_verifier::program::Groth16Verifier;
+pub use groth_16_verifier::{Proof, PublicInputs, VerificationKey};
 use ownable::Ownership;
+
+use crate::state::{VerifierEntry, VerifierRouter};
 
 /// Account validation struct for router initialization
 ///

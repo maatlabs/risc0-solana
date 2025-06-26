@@ -13,13 +13,14 @@
 // limitations under the License.
 //
 // SPDX-License-Identifier: Apache-2.0
+#![allow(unexpected_cfgs)]
 
 use anchor_lang::prelude::*;
-use anchor_lang::solana_program::alt_bn128::prelude::*;
 use anchor_lang::solana_program::hash::hashv;
 use anchor_lang::system_program;
 use error::VerifierError;
 use hex_literal::hex;
+use solana_bn254::prelude::*;
 
 mod error;
 mod vk;
@@ -29,7 +30,7 @@ pub mod client;
 
 pub use vk::{VerificationKey, VERIFICATION_KEY};
 
-declare_id!("CA4wbHHhe4bxakLB4t21uQKWSjpGYciNKJjJS26XRnmi");
+declare_id!("BDjRvcjoT3W4ezXx9un91ptLMctFwZqKQfoDocBsHBq6");
 
 // Base field modulus 'q' for BN254
 // https://docs.rs/ark-bn254/latest/ark_bn254/
@@ -273,10 +274,11 @@ fn subtract_be_bytes(a: &mut [u8; 32], b: &[u8; 32]) {
 
 #[cfg(test)]
 mod test_groth16_lib {
-    use super::client::*;
-    use super::*;
     use risc0_zkvm::sha::Digestible;
     use risc0_zkvm::Receipt;
+
+    use super::client::*;
+    use super::*;
 
     // Reference base field modulus for BN254
     // https://docs.rs/ark-bn254/latest/ark_bn254/

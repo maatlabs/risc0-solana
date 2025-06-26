@@ -72,10 +72,12 @@ pub mod my_program {
 ## Account Space
 
 When initializing an account that implements `Ownable`, make sure to allocate enough space for the ownership data:
+
 - Ownership struct size: 66 bytes (2 optional Pubkeys: 33 bytes each)
 - Add this to your existing account size calculation
 
 Example:
+
 ```rust
 #[derive(Accounts)]
 pub struct Initialize<'info> {
@@ -96,6 +98,7 @@ pub struct Initialize<'info> {
 ## Ownership Transfer Process
 
 1. Current owner initiates transfer:
+
 ```typescript
 await program.methods
   .transferOwnership(newOwnerPubkey)
@@ -108,6 +111,7 @@ await program.methods
 ```
 
 2. New owner accepts transfer:
+
 ```typescript
 await program.methods
   .acceptOwnership()
@@ -120,6 +124,7 @@ await program.methods
 ```
 
 Either party can cancel the transfer before acceptance:
+
 ```typescript
 await program.methods
   .cancelTransfer()
@@ -134,6 +139,7 @@ await program.methods
 ## Error Handling
 
 The library provides the following error types:
+
 - `NotOwner`: Operation requires current owner
 - `CannotTransferToSelf`: Attempted transfer to current owner
 - `NoPendingTransfer`: No transfer in progress
@@ -146,11 +152,13 @@ The library provides the following error types:
 The library includes comprehensive tests that demonstrate functionality and edge cases. To run the tests:
 
 1. Navigate to the test-program directory:
+
 ```bash
 cd test-program
 ```
 
 2. Run the Anchor tests:
+
 ```bash
 anchor test
 ```
