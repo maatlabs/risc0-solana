@@ -289,14 +289,7 @@ mod test_groth16_lib {
         let receipt_json_str = include_bytes!("../test/data/receipt.json");
         let receipt: Receipt = serde_json::from_slice(receipt_json_str).unwrap();
 
-        let claim_digest = receipt
-            .inner
-            .groth16()
-            .unwrap()
-            .claim
-            .digest()
-            .try_into()
-            .unwrap();
+        let claim_digest = receipt.inner.groth16().unwrap().claim.digest().into();
         let public_inputs = public_inputs(claim_digest).unwrap();
 
         let proof_raw = &receipt.inner.groth16().unwrap().seal;

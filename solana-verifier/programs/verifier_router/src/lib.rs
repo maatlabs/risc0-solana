@@ -26,7 +26,7 @@ pub use ownable::OwnableError;
 use router::*;
 use state::*;
 
-declare_id!("6L2zH1CpQGNzMc8uNX1QcK3iiNxKB1FpDgaLm1yR8nU7");
+declare_id!("3uqcghDkzREcs1nbUk1LBXztaHCr9Abt9nrPfv1modF3");
 
 /// Verifier Router Program for Anchor
 ///

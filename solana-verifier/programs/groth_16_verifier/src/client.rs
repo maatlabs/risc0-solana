@@ -190,6 +190,7 @@ pub(crate) fn convert_g2(values: &[Vec<String>]) -> Result<[u8; G2_LEN]> {
     Ok(result)
 }
 
+#[allow(clippy::result_unit_err)]
 pub fn receipt_to_proof(receipt: &Groth16Receipt<ReceiptClaim>) -> Result<Proof, ()> {
     let seal = &receipt.seal;
     if seal.len() < 256 {
